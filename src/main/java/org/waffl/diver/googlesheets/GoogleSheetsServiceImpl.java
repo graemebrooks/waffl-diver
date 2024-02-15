@@ -1,4 +1,4 @@
-package org.waffl.backend.googlesheets;
+package org.waffl.diver.googlesheets;
 
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.ValueRange;

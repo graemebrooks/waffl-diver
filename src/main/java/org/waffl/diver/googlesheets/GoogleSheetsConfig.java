@@ -1,4 +1,4 @@
-package org.waffl.backend.googlesheets;
+package org.waffl.diver.googlesheets;
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -18,9 +18,9 @@ import java.util.Collections;
 public class GoogleSheetsConfig {
 
     @Bean
-    public Sheets googleSheetsService() throws GeneralSecurityException, IOException {
-        // Path to your service account key file
-        String serviceAccountKeyFilePath = "path/to/your/service-account-key.json";
+    public Sheets GoogleSheetsService() throws GeneralSecurityException, IOException {
+//         Path to your service account key file
+        String serviceAccountKeyFilePath = "src/main/resources/waffl-archive-c062805efa2f.json";
 
         // Load the service account key
         GoogleCredentials credentials = ServiceAccountCredentials.fromStream(new FileInputStream(serviceAccountKeyFilePath))

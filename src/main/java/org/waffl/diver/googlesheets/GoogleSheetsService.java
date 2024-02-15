@@ -1,4 +1,4 @@
-package org.waffl.backend.googlesheets;
+package org.waffl.diver.googlesheets;
 
 import java.io.IOException;
 import java.util.List;
