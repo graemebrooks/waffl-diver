@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.waffl.diver.googlesheets.GoogleSheetsService;
 import org.waffl.diver.googlesheets.GoogleSheetsServiceImpl;
+import org.waffl.diver.model.RegularSeasonTeamStats;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/google-sheets")
@@ -34,19 +36,10 @@ public class GoogleSheetsController {
 
 
 
-    @GetMapping("/data")
-    public List<List<Object>> getSheetDataTest() throws IOException {
-
-        // Assume you're fetching data from a specific spreadsheet and range
-        String spreadsheetId = "10hTrKAubzc-uZ_RtKGVvU3cg9hhN2cDYll5p1ltfwmk";
-        String range = GoogleSheetsServiceImpl.buildRangeString(
-                "All-Time Regular Season Team Stats",
-                "B4",
-                "B4"
-        );
-
-        List<List<Object>> cells = googleSheetsService.readData(spreadsheetId, range);
-        System.out.println(cells.get(0).get(0).toString());
-        return cells;
+    @GetMapping("/regular-season-team-stats")
+    public Map<String, RegularSeasonTeamStats> getSheetDataTest() throws IOException {
+        Map<String, RegularSeasonTeamStats> teamStatsMap = googleSheetsService.getRegularSeasonTeamStatsMap();
+        System.out.println(teamStatsMap.toString());
+        return teamStatsMap;
     }
 }
