@@ -35,4 +35,10 @@ public class GoogleSheetsServiceImpl implements GoogleSheetsService {
                 .setValueInputOption("RAW")
                 .execute();
     }
+
+    public static String buildRangeString(String sheetName, String startCell, String endCell) {
+        String range = sheetName + "!" + startCell + ":" + endCell;
+        System.out.println(range);
+        return range;
+    }
 }

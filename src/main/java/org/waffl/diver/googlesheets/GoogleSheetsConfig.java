@@ -20,7 +20,7 @@ public class GoogleSheetsConfig {
     @Bean
     public Sheets GoogleSheetsService() throws GeneralSecurityException, IOException {
 //         Path to your service account key file
-        String serviceAccountKeyFilePath = "src/main/resources/waffl-archive-c062805efa2f.json";
+        String serviceAccountKeyFilePath = "src/main/resources/waffl-archive-53fa98e75654.json";
 
         // Load the service account key
         GoogleCredentials credentials = ServiceAccountCredentials.fromStream(new FileInputStream(serviceAccountKeyFilePath))

@@ -42,3 +42,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Google Credentials ###
+/src/main/resources/waffl-archive-53fa98e75654.json
